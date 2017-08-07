@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>ECE3SAT</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/v1.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/navWiki.css"/>
+		<script src="/js/wikiMenuScript.js"></script>
+		<script src="/js/imageScript.js"></script>
+		<script src="https://www.w3schools.com/lib/w3.js"></script> 
+		<title>ECE3SAT's Website</title>
+</head>
+<body>
+
+<div w3-include-html="/wiki/headerWiki.html"></div>
+
+<script>
+w3.includeHTML();
+</script>
+
+<div id="home">
+	<div class="v1-content v1-container v1-padding-64" id="globalContext">
+		<h3 class="v1-center">Attitude Determination Control System (ADCS)</h3>
+		<br><br>
+		<div class="v1-row">
+			<div class="v1-col v1-padding-large">
+				<p>The ADCS is divided into 4 modules. It is important to note that the ADCS system is currently based on a preliminary design and is subject to changes. The objectives of each module are depicted in the following list: </p>
+				<ul>
+					<li><p>The SENS is composed of a set of sensors. This set will have to harvest data in order to get information about the CubeSat position. </p></li>
+					<li><p>The ACT are the CubeSat attitude actuators. ACT will have to adapt the CubeSat’s attitude according to the mission needs.</p></li>
+					<li><p>The ADCS controller (CTRL) objectives are to collect data from sensors and to process it to get reliable positioning information. Then the ADCS will send orders to ACT in order to correct/modify the CubeSat’s attitude if <a href="ECE3SAT/wiki/OBC/presentation.html">OBC</a> and <a href="ECE3SAT/wiki/EPS/presentation.html">EPS</a> subsystems allow it. </p></li>
+					<li><p>The Interface (INT) module has for objective to ensure good connection with other systems of the satellite and to send data to the other systems. </p></li>
+				</ul>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/ADCS_subsystem.png" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="ADCS Subsystems">
+					<figcaption>Figure 1: ADCS Subsystems</figcaption>
+				</div>
+				<h4>Sensors System (SENS) </h4>
+				<p>ADCS Sensors system will be composed of absolute sensors to get constant access to the attitude relative to an external frame. And relative sensors to get access to the current attitude relative to the previous one. </p>
+				<h4>Actuators System (ACT) </h4>
+				<p>The actuators goal is to position the CubeSat in the target attitude by rotation it around 3 axes: Yaw / Pitch / Roll. So the Actuators System will be placed to have control over the 3 axes (X, Y, Z). </p>
+				<h4>Controller (CTRL) </h4>
+				<p>The ADCS Controller will calculate the attitude in which the CubeSat is thanks to the data coming from Sensors. Also the Algorithm inside the controller will calculate the targeted attitude. And then will determine the rotations to accomplish for each axis. </p>
+				<h4>Interface (INT) </h4>
+				<p>tThe ADCS Interface is the hardware part of ADCS which transmit the signal received from Sensors to the micro-controller and it also distributes power supply coming from the EPS subsystem to the Actuators. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/ADCS_Récap.png" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="ADCS Recap">
+					<figcaption>Figure 1: ADCS Subsystems</figcaption>
+				</div>
+				<h4>Document</h4>
+				<p><a href="/wiki/pdf/System_Specifications_ADCS_+_SOA.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>System Specifications ADCS and SOA</a></p>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div w3-include-html="/wiki/footerWiki.html"></div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+  <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+    <img id="img01" class="v1-image">
+    <p id="caption" class="v1-opacity v1-large"></p>
+  </div>
+</div>
+
+</body>
+</html>
+

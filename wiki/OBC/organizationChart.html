@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>ECE3SAT</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/v1.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/navWiki.css"/>
+		<script src="/js/wikiMenuScript.js"></script>
+		<script src="/js/imageScript.js"></script>
+		<script src="https://www.w3schools.com/lib/w3.js"></script> 
+		<title>ECE3SAT's Website</title>
+</head>
+<body>
+
+<div w3-include-html="/wiki/headerWiki.html"></div>
+
+<script>
+w3.includeHTML();
+</script>
+
+<div id="home">
+	<div class="v1-content v1-container v1-padding-64" id="globalContext">
+		<h3 class="v1-center">Organization Chart OBC</h3>
+		<br><br>
+		<div class="v1-row">
+			<div class="v1-col v1-padding-large">
+				<p>There are three phases of algorithms: </p>
+				<ul>
+					<li><p>The first algorithm is to control the detumbling phase following the separation from the launcher. </p></li>
+					<li><p>The second algorithm to charge battery. </p></li>
+					<li><p>The third algorithm for the mission mode with the paylaod deployment. </p></li>
+				</ul>
+				<p>There are three loops, one for each algorithm. Each loop has a quick main with a watchdog protection and a stack for CubeSat states to avoid blocking calls.  </p>
+				<h4>Charts</h4>
+				<h5><b>Loop 1: Detumbling</b></h5>
+				<p>The detumbling phase following the separation from the launcher. After an initialization, the OBC turns on the ADCS, then send an order to stabilize the CubeSat. The OBC sends regulary an order to ask if the detumbling phase is finished. When it is finished, an order is sent to stop the detumbling and the next loop begins. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/Loop_1.png" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="Detumbling algorithm">
+					<figcaption>Detumbling algorithm</figcaption>
+				</div>
+				<h5><b>Loop 2: Charge battery</b></h5>
+				<p>To charge the battery, the OBC controls if the CubeSat is oriented correctly. To do that, an orientation order is regulary sent until the CubeSat is oriented correctly. </p>
+				<p>This loop is executed when the CubeSat is under sunlight. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/Loop_2.png" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="Charge battery algorithm">
+					<figcaption>Charge battery algorithm</figcaption>
+				</div>
+				<h5><b>Loop 3: Payload Deployment</b></h5>
+				<h4>Files</h4>
+				<p><a href="/wiki/pdf/Loop_1_Detumbling.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Loop 1 Detumbling</a></p>
+				<p><a href="/wiki/pdf/Loop_2_Charge_battery.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Loop 2 Charge battery</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div w3-include-html="/wiki/footerWiki.html"></div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+  <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+    <img id="img01" class="v1-image">
+    <p id="caption" class="v1-opacity v1-large"></p>
+  </div>
+</div>
+
+</body>
+</html>
+

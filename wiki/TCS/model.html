@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>ECE3SAT</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/v1.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/navWiki.css"/>
+		<script src="/js/wikiMenuScript.js"></script>
+		<script src="/js/imageScript.js"></script>
+		<script src="https://www.w3schools.com/lib/w3.js"></script> 
+		<title>ECE3SAT's Website</title>
+</head>
+<body>
+
+<div w3-include-html="/wiki/headerWiki.html"></div>
+
+<script>
+w3.includeHTML();
+</script>
+
+<div id="home">
+	<div class="v1-content v1-container v1-padding-64" id="globalContext">
+		<h3 class="v1-center">Model TCS </h3>
+		<br><br>
+		<div class="v1-row">
+			<div class="v1-col v1-padding-large">
+				<p>The purpose of this technical realization was to validate data exchange with system specifications. To do so we decided to build our own anthena.</p>
+				<p>That's why we used a communication card provided by the AMSAT-F, a DVB-T dongle, an LNA amplifier and our home-made antenna. </p>
+				<h4>Software Defined Radio (SDR)</h4>
+				<p>For the software part we used the software SDRSharp, a software that allows us to pilot the key via an interface of spectrum analysis and selection of frequency, bandwidth and signal processing tools. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_SDR.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS SDR">
+					<figcaption>TCS SDR</figcaption>
+				</div>
+				<h4>Doppler effect</h4>
+				<p>In parallel with the SDR we used the software Orbitron to have a satellite tracking station with TLE (Two-Line Elements) information and automatic correction of the retroactive Doppler effect on SDRSharp. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_orbit.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS ORBIT">
+					<figcaption>TCS ORBIT</figcaption>
+				</div>
+				<p>The two-line orbital parameters (TLE) are elements measured and calculated by NORAD and NASA, not only for artificial satellites, but also for space debris. They allow Orbitron to calculate the position of objects in orbit at any time because they follow the laws of Kepler and Newton.</p>
+				<p>By setting the input text files of the software, we can easily isolate the satellites we are interested in, namely the CubeSat of the AMSAT.</p>
+				<p>Once selected, we have access to a lot of satellite information, including emission frequency and Doppler calculation. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_dopler.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS Dopler">
+					<figcaption>TCS Dopler</figcaption>
+				</div>
+				<p>The Orbitron software allows us to control the frequency selection of SDRSharp by taking into account the value of the Doppler in real time. </p>
+				<h4>Demodulation</h4>
+				<p>For the demodulation, we had several choices :</p>
+				<ul>
+					<li><p>The first option is that we can either use an open source amateur radio software: MULTIPSK. This one allows us to demodulate the signal modulated in BPSK in real time. To send the stream from SDRSharp to MULTIPSK, we have installed Virtual Audio Cable which allows to direct the output of SDR to the input of the demodulator.</p></li>
+					<li><p>The second option is to use a more specific software that only works with the FUNcube and its associated dongle. This is the FUNcube Dashboard software which is dedicated to the telemetry of this CubeSat.
+The software’s interface is a high level of programming: We can’t see any treatment of data and that we access directly to the data of telemetries interpreted in background by the dashboard.
+In the same way, the software is provided with the virtual audio gateway as input and the software identifies and interprets in real time the signal which must be at 1200 bauds in BPSK modulation.
+From the moment this software recognizes an AX-25 frame, it translates it into telemetry data. </p></li>
+				</ul>
+				<h4>Dongle</h4>
+				<p>We decided to use the following TNT USB key: </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_USB.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS USB">
+					<figcaption>TCS USB</figcaption>
+				</div>
+				<p>This key contains the RLT2832U chip and the R820T2 tuner. It competes perfectly with the usual scanners since it covers from 30MHz to 1500MHz, and this with two spectrum analyzers: </p>
+				<ul>
+					<li><p>A 2D: frequency / amplitude </p></li>
+					<li><p>A 3D: "waterfall" frequency / amplitude / time </p></li>
+				</ul>
+				<p>The disadvantage of this USB kit is that the antenna supplied with it is not suitable for the use we want to make of it. To overcome this problem, we started the realization of an antenna optimized for our study </p>
+				<h4>Anthena realization</h4>
+				<p>We were targeting the frequency of the FUNcube in telemetry which is 145.935MHz. This is why we decided to manufacture an antenna called Yagi-Uda 3 elements. </p>
+				<p>The Yagi-Uda is a type of antenna that has an active element, the dipole, which will be fed with high-frequency signals. In front of the dipole takes place a slightly shorter element, this element is called "director". Behind the dipole is positioned a slightly longer element called "reflector". </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_anthena.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS anthena">
+					<figcaption>TCS anthena</figcaption>
+				</div>
+				<p>We made this antenna with a square aluminum profile and 8 mm aluminum rod.</p>
+				<p>Concerning the length of the dipoles, it was chosen according to the frequency of emission of the FUNcube: </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_anthena2.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS anthena2">
+					<figcaption>TCS anthena2</figcaption>
+				</div>
+				<p>To tune the antenna impedance, we installed a gamma match element as follows: </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_gammamatch.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS gammamatch">
+					<figcaption>TCS gammamatch</figcaption>
+				</div>
+				<h4>Preamplifier</h4>
+				<p>The chosen preamplifier is the LNA4ALL, a preamplifier and a low-pass filter (LNA), with SMA Female connectors, for VHF and UHF frequencies covering all bands from 28 MHz to 2500 MHz (2.5Ghz).
+We chose this one because it allows to improve very clearly the reception performance, on all bands VHF and UHF up to 2.5Ghz, of a TNT key RTL-SDR. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_preamplifier.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS preamplifier">
+					<figcaption>TCS preamplifier</figcaption>
+				</div>
+				<p>The LNA was then bought and the model assembled. </p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_LNA.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS LNA">
+					<figcaption>TCS LNA</figcaption>
+				</div>
+				<p><a href="/wiki/pdf//Technical_realization_TCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Technical realization TCS</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div w3-include-html="/wiki/footerWiki.html"></div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+  <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+    <img id="img01" class="v1-image">
+    <p id="caption" class="v1-opacity v1-large"></p>
+  </div>
+</div>
+
+</body>
+</html>
+

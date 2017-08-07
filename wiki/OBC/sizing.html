@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>ECE3SAT</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/v1.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/navWiki.css"/>
+		<script src="/js/wikiMenuScript.js"></script>
+		<script src="/js/imageScript.js"></script>
+		<script src="https://www.w3schools.com/lib/w3.js"></script> 
+		<title>ECE3SAT's Website</title>
+</head>
+<body>
+
+<div w3-include-html="/wiki/headerWiki.html"></div>
+
+<script>
+w3.includeHTML();
+</script>
+
+<div id="home">
+	<div class="v1-content v1-container v1-padding-64" id="globalContext">
+		<h3 class="v1-center">Sizing OBC</h3>
+		<br><br>
+		<div class="v1-row">
+			<div class="v1-col v1-padding-large">
+				<p>Since the OBC is such as a computer, the components to size are everything about calculation power and memories. The ROM, the RAM, the OS, the microcontroller, but also the communication protocol have to be size.</p>
+				<h4>Microcontroller</h4>
+				<p>The microcontroller will run on 3.3 V to save power consumption and to fit with other CubeSats experiments. </p>
+				<h5>Processor</h5>
+				<p>The number of bit of the processor will have an impact on the power consumption and the efficiency for the calculation. A 8-bit processor will consume less while a 32-bit processor will have a better efficiency. Nevertheless, the new generation of 32-bit processor are low power consumption and could be used in CubeSat's architecture.</p>
+				<h5>RAM</h5>
+				<p>The Random Access Memory (RAM) has to be able to keep working without damage its data under radiation and high temperature. We chose to implement the OBC and the ADCS on the same electronic card to save space. For this, the RAM must meet the OBC and ADCS modules needs. We consider all program data for the two modules will need no more than 4MB. </p>
+				<p>A static RAM, or SRAM, will be used on the board since it consume less power. </p>
+				<h5>ROM</h5>
+				<p>The ROM used will be both flash memory and EEPROM. The Flash memory to store programs and data and the EEPROM to hold the program that would be launched if the OBC has to shut down due to energy/malfunction issues.  </p>
+				<h4>Operating System</h4>
+				<p>A big number of OS exists for embedded systems. But, for CubeSats, there is only two different OS mainly use. FreeRTOS and Salvo.  </p>
+				<h4>References</h4>
+				<p><a href="http://dtusat1.dtusat.dtu.dk/files/filedl.html?fileid=244">OnBoard Computer for Pico Satellite</a></p>
+				<p>Design and Development of an ADCS OBC for a CubeSat By Pieter Johannes Botma </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div w3-include-html="/wiki/footerWiki.html"></div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+  <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+    <img id="img01" class="v1-image">
+    <p id="caption" class="v1-opacity v1-large"></p>
+  </div>
+</div>
+
+</body>
+</html>

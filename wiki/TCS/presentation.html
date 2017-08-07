@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>ECE3SAT</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/v1.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" href="/css/navWiki.css"/>
+		<script src="/js/wikiMenuScript.js"></script>
+		<script src="/js/imageScript.js"></script>
+		<script src="https://www.w3schools.com/lib/w3.js"></script> 
+		<title>ECE3SAT's Website</title>
+</head>
+<body>
+
+<div w3-include-html="/wiki/headerWiki.html"></div>
+
+<script>
+w3.includeHTML();
+</script>
+
+<div id="home">
+	<div class="v1-content v1-container v1-padding-64" id="globalContext">
+		<h3 class="v1-center">Telecommunication System (TCS)</h3>
+		<br><br>
+		<div class="v1-row">
+			<div class="v1-col v1-padding-large">
+				<h4>Presentation</h4>
+				<p>The TCS, or telecommunication system, communicates with the Ground Control Station. It sends data to the Earth and receive orders (to shut down the satellite because of an external factor for example). The data sent to the Ground Control Station are transmitted to the TCS by the <a href="ECE3SAT/wiki/OBC/presentation.html">OBC</a> . And, in the same way, orders sent from Earth to TCS are transmit to the <a href="ECE3SAT/wiki/OBC/presentation.html">OBC</a>.</p>
+				<h4>Subsystem division</h4>
+				<p>The TCS is divided in three subsystems which are Antenna, Modulation/Demodulation (MODEM) and Data processing.</p>
+				<div class="v1-col v1-image v1-center v1-padding-large">
+					<img src="/wiki/images/TCS_schematic.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity" alt="TCS Subsystems">
+					<figcaption>TCS Subsystems</figcaption>
+				</div>
+				<p>The first subsystem, is mixed of two antenna embedded on the CubeSat. One to receive order, and the other one to send data and transmit messages. </p>
+				<p>The MODEM convert signals received and sent by and from antenna. It apply a digital-to-analog conversion for the orders received, and analog-to-digital conversion for the data which has to be send. The signal is amplified since there is attenuation of the signal during the transmission process. </p>
+				<p>The third subsystem, data processing, is the encapsulation and decapsulation of the frame. It corresponds to the encryption of the frame before being sent.  </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div w3-include-html="/wiki/footerWiki.html"></div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+  <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+    <img id="img01" class="v1-image">
+    <p id="caption" class="v1-opacity v1-large"></p>
+  </div>
+</div>
+
+</body>
+</html>
