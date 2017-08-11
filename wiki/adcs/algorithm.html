@@ -23,7 +23,6 @@
 
     <script>
         w3.includeHTML();
-
     </script>
 
     <div id="home">
@@ -41,23 +40,23 @@
                         <figcaption>Figure 1: ADCS Algorithm</figcaption>
                     </div>
                     <p>As we can see our algorithm begins with the initialization of our module (the IO, communication, sensors
-                        and actuators).Then a confirmation of well-functioning is sent to the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a>.
-                        </p>
-                    <p>That’s where we reach the central loop. The <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a> can
-                        give us several order which can be classified as follow: </p>
+                        and actuators).Then a confirmation of well-functioning is sent to the <a href="ECE3SAT/wiki/obc/index.html">OBC</a>.
+                    </p>
+                    <p>That’s where we reach the central loop. The <a href="ECE3SAT/wiki/obc/index.html">OBC</a> can give us
+                        several order which can be classified as follow: </p>
                     <ul>
                         <li>
                             <p>If it asks us to start to take measure or to move (so to start the actuators), we check if a
                                 session in not already in progress and if it is not we perform the task and send the data.
-                                </p>
+                            </p>
                         </li>
                         <li>
                             <p>If it asks us to stop measures or movement, we check if we were doing it and if it is the case,
                                 we stop doing it.</p>
                         </li>
                         <li>
-                            <p>Finally, if the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a> ask to shutdown, we verify
-                                if we were performing action and then stop them. This put us to the end of our loop. </p>
+                            <p>Finally, if the <a href="ECE3SAT/wiki/obc/index.html">OBC</a> ask to shutdown, we verify if we
+                                were performing action and then stop them. This put us to the end of our loop. </p>
                         </li>
                     </ul>
                 </div>

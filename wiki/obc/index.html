@@ -23,33 +23,34 @@
 
     <script>
         w3.includeHTML();
-
     </script>
 
     <div id="home">
         <div class="v1-content v1-container v1-padding-64" id="globalContext">
-            <h3 class="v1-center">Telecommunication System (TCS)</h3>
+            <h3 class="v1-center">On Board Computer (OBC)</h3>
             <br><br>
             <div class="v1-row">
                 <div class="v1-col v1-padding-large">
                     <h4>Presentation</h4>
-                    <p>The TCS, or telecommunication system, communicates with the Ground Control Station. It sends data to
-                        the Earth and receive orders (to shut down the satellite because of an external factor for example).
-                        The data sent to the Ground Control Station are transmitted to the TCS by the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a>                        . And, in the same way, orders sent from Earth to TCS are transmit to the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a>.</p>
+                    <p>The On Board Computer, or OBC, is the brain of the satellite and has different missions such as the coordination
+                        of all the actions, sending orders to the different modules, the reception and storage of information
+                        of the CubeSat, sending this information back to Earth via the <a href="ECE3SAT/wiki/tcs/index.html">TCS</a>                        error handling within the CubeSat. </p>
                     <h4>Subsystem division</h4>
-                    <p>The TCS is divided in three subsystems which are Antenna, Modulation/Demodulation (MODEM) and Data processing.</p>
+                    <p>The OBC is divided into three subsystems which are Microcontroller, Interfaces and Electronics. </p>
                     <div class="v1-col v1-image v1-center v1-padding-large">
-                        <img src="/wiki/images/TCS_schematic.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
-                            alt="TCS Subsystems">
-                        <figcaption>TCS Subsystems</figcaption>
+                        <img src="/wiki/images/OBC_schematic.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
+                            alt="OBC schematic">
+                        <figcaption>OBC schematic</figcaption>
                     </div>
-                    <p>The first subsystem, is mixed of two antenna embedded on the CubeSat. One to receive order, and the other
-                        one to send data and transmit messages. </p>
-                    <p>The MODEM convert signals received and sent by and from antenna. It apply a digital-to-analog conversion
-                        for the orders received, and analog-to-digital conversion for the data which has to be send. The
-                        signal is amplified since there is attenuation of the signal during the transmission process. </p>
-                    <p>The third subsystem, data processing, is the encapsulation and decapsulation of the frame. It corresponds
-                        to the encryption of the frame before being sent. </p>
+                    <p>The Microcontroller is a processing unit of the OBC dedicated to the Satellite Management (SM). Its has
+                        to manage the data from other modules collected through the interface and to use it to give orders.
+                    </p>
+                    <p>The interface subsystem is responsible for the communication with other modules. It ensures a good connection
+                        with other systems of the satellite and allows them to send information. It is also in charge of
+                        collecting the power supplied by the <a href="ECE3SAT/wiki/eps/index.html">EPS</a>. The microcontroller
+                        is in charge of the storing system data, operation data, logs and measurements. </p>
+                    <p>The electronics subsystem protects all the electronic components of the OBC chip from radiation and magnetic
+                        fields. It also prevents destructive noise on the signals processed within the OBC. </p>
                 </div>
             </div>
         </div>
