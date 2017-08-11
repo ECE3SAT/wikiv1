@@ -67,7 +67,8 @@
     content: " ";
 }
 .nav > li a {
-	background-color: black !important; /*color of the dropdown menu elem*/
+	/* No more important to override the color */
+	background-color: black; /*color of the dropdown menu elem*/
 	color: #fff !important;
 	display: block;
 	font-size: 14px;
@@ -168,6 +169,18 @@
     opacity: 1;
   }
   #main-menu,#main-wrapper {
-	  width: 100%;
+    width: 100%;
   }
+  #main-wrapper {
+	/* Full screen menu to allow scrolling on mobile devices */
+	height: 100vh;
+	overflow: auto;
+  }
+
+  /* Lighter sub-menus */
+  ul.sub-menu a {
+    	background-color: #222;
+  }
+  ul.sub-menu {
+	  width: 100%;
 }
