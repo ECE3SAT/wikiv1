@@ -182,5 +182,5 @@
     	background-color: #222;
   }
   ul.sub-menu {
-	  width: 100%;
+	  width: 100%!important;
 }
