@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE3SAT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/v1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/navWiki.css" />
+    <script src="/js/google-analytics.js"></script>
+    <script src="/js/wikiMenuScript.js"></script>
+    <script src="/js/imageScript.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>ECE3SAT's Website</title>
+</head>
+
+<body>
+
+    <div w3-include-html="/wiki/headerWiki.html"></div>
+
+    <script>
+        w3.includeHTML();
+
+    </script>
+    <div id="home">
+        <div class="v1-content v1-container v1-padding-64" id="globalContext">
+            <h3 class="v1-center">Feasibility Study EPS </h3>
+            <br><br>
+            <div class="v1-row">
+                <div class="v1-col v1-padding-large">
+                    <p>The feasibility study aims to assess the practicality of the EPS module. The purpose of this stage is
+                        to assess the performance according to the association of the requirements and the state of the art.
+                        </p>
+                    <h4>PCC</h4>
+                    <p>As a brief remind, the PCC module is responsible for the distribution and regulation of electricity through
+                        the CubeSat. There is many requirements to fit such as the protection of the modules, the communication
+                        with the OBC and the energy distribution from PV cells to battery for the storage and/or to module
+                        for the consumption.</p>
+                    <p>The MPPT will have to handle a maximum input voltage of 4V from solar panels and supply power to a 3.7
+                        V battery. Redirecting the current to regulators providing energy to the modules (3.3V and 5V). The
+                        modules are both connected to the panels and the battery, that is why regulators will be connected
+                        in parallel to the MPPT output and the battery. An additional cell has been integrated because of
+                        the large amount of energy needed for the detumbling phase, the battery will not be enough to ensure
+                        the power supply in this time.</p>
+                    <p>It has been established that a 3.3V regulated bus detumbling could be used to supply ADCS and OBC (which
+                        are on the same board), the other 5V converters will be connected to TCS and EDT. These figures are
+                        for now only indicative and will have to be changed according to the needs of each module.</p>
+                    <p>The MCU is used for gathering and computing the housekeeping data, taking decisions for connecting/disconnecting
+                        users in case of failure and communicating with OBC thanks to an UART bus. The battery level of charge
+                        is harvested through an analog-digital converter.</p>
+                    <p>A schematic of the description above, develops the architecture more clearly:</p>
+                    <div class="v1-col v1-image v1-center v1-padding-large">
+                        <img src="/wiki/images/schema_elec_EPS.png" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
+                            alt="Electrical Schema EPS">
+                        <figcaption>Electrical schema</figcaption>
+                    </div>
+                    <p>According to the availability on the market, the type of regulators varies as a function of the input
+                        and the output. As the battery charge regulator receives a various input from MPPT which can be superior
+                        or inferior to 3.7V, it has to work as a step-up and step-down regulator. For increasing the voltage
+                        from 3.7V to 5V the second regulator should be a step-up. As the last regulator decreases the voltage
+                        to 3.3V, it should be a step-down regulator. But, since the battery's output voltage decrease with
+                        its level of charge, the input voltage of regulators could be under 3.3V. Therefore, the last regulator
+                        should not be only a step-down regulator, it has to be a step-up/step-down voltage regulator, with
+                        a 3.3V output.</p>
+                    <h4>Microcontroller</h4>
+                    <p>The microcontroller has to handle the energy distribution of the entire CubeSat, and has to communicate
+                        with the OBC too. Thus, it needs four digital/analog outputs (EDT, ADCS, Telecom, OBC), one BUS with
+                        a two-way communication between the microcontroller and the OBC in: UART. And two inputs with a power
+                        BUS and one another BUS which is used to send data of the battery level of charge to the microcontroller:
+                        SPI.</p>
+                    <h5>Energy consumption</h5>
+                    <p>Generally, microcontrollers consume few energy, around the mirco ampere for the “Active mode” and around
+                        the hundreds of nano ampere for the “Off mode”. Others microcontrollers are more economical, they
+                        can be used with six different ways. </p>
+                    <h5>Voltage range</h5>
+                    <p>The voltage range of the microcontroller depends of the output voltage of the battery, which is 3.7V.</p>
+                    <p>Almost microcontrollers have a voltage range of 2-3.6V, except for the ATMEGA1281 which has a voltage
+                        range of 2.7-5.5V.</p>
+                    <h5>Memory</h5>
+                    <p>In the light of the functions of the microcontrollers the memory didn’t have to be huge. All the microcontrollers
+                        are viable.</p>
+                    <h4>PV</h4>
+                    <p>The sizing of this module has to be accurate and margins have to be considered to be sure of the capability
+                        of production compare to the consumption.</p>
+                    <p>The energy production of the PV mainly depends of two factors which are the efficiency and the surface
+                        area of the cells. Other characteristics such as temperature, way to wire or weight have to be taken
+                        into account.</p>
+                    <h5>Temperature</h5>
+                    <p>The PVs are subject to high electro magnetic radiation that cause huge variation of the temperature over
+                        time. (Around 100°C of difference between solar exposition phasis and eclipse). Then PVs shall be
+                        sized to undergo the extreme conditions of space environment.</p>
+                    <h5>Surface & Efficiency</h5>
+                    <p>The limited surface area on each side of the nanosatellite implies some restriction on the type of PVs
+                        available on the market and in compliance with the need of production. Efficiency and surface being
+                        related to each other, finding a compromise between them could imply an increase in the cost.</p>
+                    <p>As panel's efficiency decreases over time, the capacity of production shall be computed for the beginning
+                        and the end of life. According to the allocated power budget, efficiency shall be maximized, Triple
+                        Junction solar cells are well indicated for this last condition. Generally, the solar cells designed
+                        for 1U CubeSat are between 25% and 30%.</p>
+                    <p>Triple junction solar cells are used in space, our CubeSat will integrate this technology too. To save
+                        money, a choice of solar cells rather than complete solar panel has been studied.</p>
+                    <p>The advantages of this solution are the flexibility on architecture, the cheaper cost, and the number
+                        of choices between different TJ solar cells</p>
+                    <p>The disadvantages of this solution are that the architecture is more complicate than solar panels's architecture
+                        (due to the big number of solar cells), the sensors, wire and magnetorquers have to be add by ourselves
+                        (inducing more risks on the result), and some solar cells such as TASC cells have not coverglass
+                        on it. In this case, there is a need to add encapsulation on cells aftermarket coverglass.</p>
+                    <p>tTherefore, the first option will be considered as our solution if the budget enables it. Otherwise,
+                        the second option will be considered even if it induce an increase of risk of mission failure.</p>
+                    <h4>PV Feasibility Study Download</h4>
+                    <p>You can find below the study of two kind of PVs Ultra Triple Junction Solar cell from Spectrolab, and
+                        ISIS TJ 3G30A</p>
+                    <p>The results calculated are the power generated by only one face of the CubeSat. However the CubeSat has
+                        5 sides with solar panels and between one and three sides can be under Sunlight at the same time.
+                        The number of sides which receives solar power is related to the orientation of the CubeSat. To estimate
+                        the power generated by the entire CubeSat, the calculations have to take in account the inclination
+                        of the satellite, in other words, the angles (here in spherical coordinates). </p>
+                    <h4>Battery</h4>
+                    <p>To supply the modules in energy, at least one rechargeable battery is needed. There are different types
+                        of batteries (Typically Li-Ion and NIMH). The technology, the attitude in a cold and hostile environment
+                        and the power consumption have to be considered to size the battery module.</p>
+                    <p>Since the CubeSats have already a huge rate of failure (due to the hostile environment that they have
+                        to face with), the battery considered in the ECE³SAT has to be as safe as possible technology designed
+                        for space.</p>
+                    <h5>Energy needed</h5>
+                    <p>There is not a Power Budget for the ECE CubeSat, therefore an average of the precedent CubeSat is used:</p>
+                    <p>For improving the battery lifespan, it has to be neither fully charged nor depth discharged. Precisely,
+                        the level of charge needs to be maintained between 20% and 90% of the total capacity. According to
+                        the amount of energy needed by the system, this should represent 70% of the battery capacity. Then,
+                        in consequence the battery should deliver 3.21 Wh.</p>
+                    <h5>Energy used</h5>
+                    <p>To improve the lifespan of the battery, it has to be neither fully charged nor depth discharged. The
+                        level of charge needs to be maintained between 20% and 90% of the total capacity. </p>
+                    <p>Moreover, in average, <b>2.25Wh</b> will be needed during an eclipse according to the power budget part.</p>
+                    <p>Thus, a battery will be required with 3.21Wh, or a capacity of <b>0.87</b> Ah with a voltage of 3.7 V.</p>
+                    <p>It is in adequacy with the 1 Ah generally used.</p>
+                    <p>The CubeSat may also consider the use of a non rechargeable battery to execute one time operation. It
+                        could be very interesting for some specific operations such as in the detumbling mode in the ECE³Sat
+                        case. So, it would a primary battery of 1Wh.</p>
+                    <h5>Vacuum</h5>
+                    <p>At low earth orbit, the atmosphere influence at really low level the space environment. Therefore, LEO
+                        is considered to be in vacuum conditions.</p>
+                    <p>The battery designed for the CubeSat has to be able to charge and to furnish electricity to modules in
+                        these vacuum conditions. </p>
+                    <h5>Temperature</h5>
+                    <p>The temperature in space is very low and it is important to take into account during the design of the
+                        modules. The battery is always confronted to the natural discharge issue, but in a cold environment
+                        this problem increases. That means that the battery has to be designed for space, and has to resist
+                        to low temperature.</p>
+                    <p>The natural discharge of the battery has to be considered according to this extreme temperature. The
+                        battery should be able to work well and without too much loss for a temperature of 0 C°. This aims
+                        to improve the charge of battery and avoid the depth of discharge.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="/wiki/footerWiki.html"></div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+        <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+            <img id="img01" class="v1-image">
+            <p id="caption" class="v1-opacity v1-large"></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

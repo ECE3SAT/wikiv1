@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE3SAT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/v1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/navWiki.css" />
+    <script src="/js/google-analytics.js"></script>
+    <script src="/js/wikiMenuScript.js"></script>
+    <script src="/js/imageScript.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>ECE3SAT's Website</title>
+</head>
+
+<body>
+
+    <div w3-include-html="/wiki/headerWiki.html"></div>
+
+    <script>
+        w3.includeHTML();
+
+    </script>
+
+    <div id="home">
+        <div class="v1-content v1-container v1-padding-64" id="globalContext">
+            <h3 class="v1-center">State Of The Art EPS</h3>
+            <br><br>
+            <div class="v1-row">
+                <div class="v1-col v1-padding-large">
+                    <p>The goal of the state of the art is to establish an inventory of the existing technologies and to see
+                        their underlying potential of their utilization in the project. </p>
+                    <h4>PV</h4>
+                    <p>The solar cells generate electricity by absorbing sunlight thanks to the photovoltaic effect. </p>
+                    <p>In space at Low Earth Orbit, the sunlight is not filtered by the atmosphere. The efficiency of a solar
+                        panel depends of the wavelength of the photons that it can absorb. Therefore, in a space context
+                        with a larger wavelength of photons available than at Earth, the technology used for the solar cells
+                        has to be able to absorb the maximum amount of photons. More, since the area available of the solar
+                        panel is strongly limited on the CubeSat (each side size 100 cm², and has to integrate solar cells
+                        but also sensors and wires). The triple junction technology solar cells have a layer well adapt to
+                        a large wavelength area with an absorption wavelength from 300 nm to 1700 nm. This option but also
+                        other types of technology have been study in the State of the Art document. </p>
+                    <div class="v1-col v1-image v1-center v1-padding-large">
+                        <img src="/wiki/images/Quantum_efficiency-0.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
+                            alt="Wavelength absorption">
+                        <figcaption>wavelength absorption depending on the layer material</figcaption>
+                    </div>
+                    <h4>BAT</h4>
+                    <p>The energy produced by PV panels has to be stored partially to deal with the eclipse period in which
+                        there is no more sunlight, and so no more electricity production. </p>
+                    <p>Batteries are generally the preferred method of energy storage for CubeSats. There are several factors
+                        to consider when choosing the dimensions and technology. </p>
+                    <ul>
+                        <li>
+                            <p>The nominal voltage has to be line with the buses voltage required by the modules supplied by
+                                the battery. </p>
+                        </li>
+                        <li>
+                            <p>The energy density determines the size of the battery compared to the needed energy </p>
+                        </li>
+                        <li>
+                            <p>The maximum discharging current limits the maximum number of modules running at the same time.
+                                This also limits the maximum consumption of any single module. </p>
+                        </li>
+                        <li>
+                            <p>The self-discharge will affect the battery capacity, so it must be taken into account when deciding
+                                the total capacity. </p>
+                        </li>
+                        <li>
+                            <p>The charging time of the battery minus the oversize part cannot be longer than the sunshine time,
+                                or else it will be a lack of electricity during the eclipse. </p>
+                        </li>
+                        <li>
+                            <p>The thermal charging and discharging range are linked to the spacial conditions, and must be
+                                line with the thermal regulation modules to provide optimal or minimal operating conditions
+                                </p>
+                        </li>
+                        <li>
+                            <p>The maximum number of cycles depends on the length of the space mission. As the capacity of the
+                                battery diminishes over time, one can choose to over-size the battery or to choose a type
+                                which has a higher number of maximum cycles.</p>
+                        </li>
+                    </ul>
+                    <p>Many kinds of 1U batteries already exist. The power stored in each of these batteries is about 10 to
+                        30 Wh. </p>
+                    <p>The ECE3SAT team considered different type of battery technology, including chemical batteries. The maximum
+                        energy density and watt-hour per kilogram rate with a correct price are the Lithium batteries (in
+                        the chemical battery technology). This technology is usually the one which is used in CubeSats. </p>
+                    <p>The lithium batteries (Li) can be divided in two categories. Lithium Polymer or Li-Po, and Lithium Ion
+                        or Li-Ion. These two categories have both advantages and disadvantages comparing with the other.
+                        </p>
+                    <div class="v1-col v1-image v1-center v1-padding-large">
+                        <img src="/wiki/images/materials.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
+                            alt="Battery types">
+                        <figcaption>Battery types</figcaption>
+                    </div>
+                    <h4>PCC</h4>
+                    <p>When the electricity has been generated by the solar panels. It has to be manage by the PCC modules.
+                        The PCC has to distribute the electricity, to the battery to store it or directly to the modules
+                        to use it. PCC has also to protect modules against over-current and reverse-current. To do so, a
+                        microcontroller, several MPPT modules and regulators will be integrate in the circuits. </p>
+                    <p>Microcontroller has to fit with the need of communication with the OBC thanks the I2C buses, of electricity
+                        distribution control with digital outputs for the electronic switchs and of measure of battery level
+                        of charge using sensors. </p>
+                    <p><a href="PATH.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>PDF</a></p>
+                    <h4>Architecture</h4>
+                    <p>There is two main architectures for CubeSats which are centralized and distributed. Each one has several
+                        advantages and disadvantages. According to a survey on 25 CubeSats led by university or affiliated
+                        university whose purpose was to determine what type of architecture was implemented, 80% of the CubeSats
+                        used centralized architecture while 20% used distributed architecture. </p>
+                    <h4>References</h4>
+                    <p><a href="http://digitalcommons.usu.edu/">Utah State University</a></p>
+                    <p><a href="http://www.utar.edu.my/contentRandD.jsp?catid=9&contentid=417&2ndcontentid=1980">Universiti Tunku Abdul Rahman</a></p>
+                    <p><a href="https://cubesatcookbook.com/directory/batteries/">The CubeSat Cook Book</a></p>
+                    <p><a href="http://chglib.icp.ac.ru/subjex/2014/pdf03/ActaAstronautica-2011-68(11-12)1752.pdf">Characterization of Lithium-Polymer batteries for CubeSat applications, Nimal Navarathinam, Regina Lee, Hugh Chesser</a></p>
+                    <p><a href="http://www.techbriefs.com/component/content/article/ntb/tech-briefs/physical-sciences/19567">Techbrief</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="/wiki/footerWiki.html"></div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+        <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+            <img id="img01" class="v1-image">
+            <p id="caption" class="v1-opacity v1-large"></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

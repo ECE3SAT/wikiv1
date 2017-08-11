@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE3SAT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/v1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/navWiki.css" />
+    <script src="/js/google-analytics.js"></script>
+    <script src="/js/wikiMenuScript.js"></script>
+    <script src="/js/imageScript.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>ECE3SAT's Website</title>
+</head>
+
+<body>
+
+    <div w3-include-html="/wiki/headerWiki.html"></div>
+
+    <script>
+        w3.includeHTML();
+
+    </script>
+
+    <div id="home">
+        <div class="v1-content v1-container v1-padding-64" id="globalContext">
+            <h3 class="v1-center">Algorithm ADCS</h3>
+            <br><br>
+            <div class="v1-row">
+                <div class="v1-col v1-padding-large">
+                    <p>The ADCS mission is to get access to sensors for attitude determination and then apply correction through
+                        actuators. </p>
+                    <p>We designed our decision taking algorithm to be as it follows : </p>
+                    <div class="v1-col v1-image v1-center v1-padding-large">
+                        <img src="/wiki/images/Algorithm_ADCS.png" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
+                            alt="Algorithm ADCS">
+                        <figcaption>Figure 1: ADCS Algorithm</figcaption>
+                    </div>
+                    <p>As we can see our algorithm begins with the initialization of our module (the IO, communication, sensors
+                        and actuators).Then a confirmation of well-functioning is sent to the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a>.
+                        </p>
+                    <p>That’s where we reach the central loop. The <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a> can
+                        give us several order which can be classified as follow: </p>
+                    <ul>
+                        <li>
+                            <p>If it asks us to start to take measure or to move (so to start the actuators), we check if a
+                                session in not already in progress and if it is not we perform the task and send the data.
+                                </p>
+                        </li>
+                        <li>
+                            <p>If it asks us to stop measures or movement, we check if we were doing it and if it is the case,
+                                we stop doing it.</p>
+                        </li>
+                        <li>
+                            <p>Finally, if the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a> ask to shutdown, we verify
+                                if we were performing action and then stop them. This put us to the end of our loop. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="/wiki/footerWiki.html"></div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+        <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+            <img id="img01" class="v1-image">
+            <p id="caption" class="v1-opacity v1-large"></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

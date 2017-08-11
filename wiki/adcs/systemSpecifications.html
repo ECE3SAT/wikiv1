@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE3SAT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/v1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/navWiki.css" />
+    <script src="/js/google-analytics.js"></script>
+    <script src="/js/wikiMenuScript.js"></script>
+    <script src="/js/imageScript.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>ECE3SAT's Website</title>
+</head>
+
+<body>
+
+    <div w3-include-html="/wiki/headerWiki.html"></div>
+
+    <script>
+        w3.includeHTML();
+
+    </script>
+
+    <div id="home">
+        <div class="v1-content v1-container v1-padding-64" id="globalContext">
+            <h3 class="v1-center">System Specifications ADCS</h3>
+            <br><br>
+            <div class="v1-row">
+                <div class="v1-col v1-padding-large">
+                    <h4>Global</h4>
+                    <p>Those requirements concerns all the ADCS card, including the subsystems. Their are mainly here to assure
+                        the functioning of the module in the conditions it will face (temperature, magnetic field, radiations
+                        and void). </p>
+                    <h4>ACT (Actuators) </h4>
+                    <p>As actuator will be our way to move in space, we impose to them to reach our precision goal of 5° along
+                        each axis. We moreover impose a condition on the orientation of the Z face in order to accomplish
+                        our mission. </p>
+                    <h4>SENS (Sensors) </h4>
+                    <p>Sensors will be our primary source of information about our attitude. To do so, we impose to them a maximum
+                        time to give us the data. We also them to warn us if they are malfunctioning. </p>
+                    <h4>CTRL (Controller)</h4>
+                    <p>The controller will collect and process our data. That's why we want the result of computation to be
+                        in our goal range (5°). CTRL have also to be able to determine the necessary correction in order
+                        to be able to send it to the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a>. Finally, the orders
+                        coming from the <a href="ECE3SAT/wiki/obc/presentation.html">OBC</a> have to be processed to individually
+                        power our actuators. </p>
+                    <h4>System Specification</h4>
+                    <p><a href="/wiki/pdf/System_Specifications_ADCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>System Specifications ADCS</a></p>
+                    <h4>Mission Specification</h4>
+                    <p><a href="/wiki/pdf/Specifications_ADCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Specifications ADCS</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="/wiki/footerWiki.html"></div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+        <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+            <img id="img01" class="v1-image">
+            <p id="caption" class="v1-opacity v1-large"></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

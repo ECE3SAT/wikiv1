@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ECE3SAT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/v1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/navWiki.css" />
+    <script src="/js/google-analytics.js"></script>
+    <script src="/js/wikiMenuScript.js"></script>
+    <script src="/js/imageScript.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>ECE3SAT's Website</title>
+</head>
+
+<body>
+
+    <div w3-include-html="/wiki/headerWiki.html"></div>
+
+    <script>
+        w3.includeHTML();
+
+    </script>
+
+    <div id="home">
+        <div class="v1-content v1-container v1-padding-64" id="globalContext">
+            <h3 class="v1-center">Sizing TCS</h3>
+            <br><br>
+            <div class="v1-row">
+                <div class="v1-col v1-padding-large">
+                    <p>The different studies we did are referenced there : </p>
+                    <h4>Electronic Components</h4>
+                    <p>General constraints : </p>
+                    <ul>
+                        <li>
+                            <p>Altitude: 400 – 1000 km above the sea level </p>
+                        </li>
+                        <li>
+                            <p>Inclination: 0° to 56° (inclination of ISS) </p>
+                        </li>
+                        <li>
+                            <p>Radiation: resisting UV radiation, X, protons, and plasma in LEO </p>
+                        </li>
+                        <li>
+                            <p>Duration of lifetime: 2 weeks to 1,5 month </p>
+                        </li>
+                        <li>
+                            <p>Vibration on the launch </p>
+                        </li>
+                        <li>
+                            <p>Maximum consumption of the CubeSat communication sub-system is 1,5W. </p>
+                        </li>
+                    </ul>
+                    <p>To respect those values, we saw the cards on board of other cubeSats. The band chosen for downlink communications
+                        is 435-438 MHzand the transmission rate: 1200 to 9600 bauds </p>
+                    <p><a href="/wiki/pdf/Electronic_components_TCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Electronic components TCS</a></p>
+                    <h4>Mecanical Components </h4>
+                    <ul>
+                        <li>
+                            <p>Environmental constraints :
+                                <ul>
+                                    <li>
+                                        <p>Thermal constraint: -150°C to +150°C </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Radiation constraint: resisting UV radiation, X, protons, and plasma in LEO
+                                <ul>
+                                    <li>
+                                        <p>The friction on the external surfaces including the antenna shall not impact its
+                                            functioning </p>
+                                    </li>
+                                    <li>
+                                        <p>The erosion due to the Oxygen (200-100km) must be managed </p>
+                                    </li>
+                                    <li>
+                                        <p>The luminescence due to the Oxygen (200-100km) must be managed </p>
+                                    </li>
+                                    <li>
+                                        <p>Launch vibrations </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Compatibility criteria :
+                                <ul>
+                                    <li>
+                                        <p>Transmission rate: 1200 to 9600 bauds </p>
+                                    </li>
+                                    <li>
+                                        <p>Broadcast max power: 1,5W </p>
+                                    </li>
+                                    <li>
+                                        <p>Frequency band: 435 to 438 MHz </p>
+                                    </li>
+                                    <li>
+                                        <p>Antenna gain max: 0 to2 dB </p>
+                                    </li>
+                                    <li>
+                                        <p>Dipole length: λ/4 minimum, λ/2 required </p>
+                                    </li>
+                                    <li>
+                                        <p>Interface: I²C </p>
+                                    </li>
+                                    <li>
+                                        <p>Envelope stowed: 98 mm x 98 mm x 7 mm </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ul>
+                    <p>for the choice of the antenna, two companies designing parts for CubeSats could propose interesting solutions
+                        for our project: ISIS and Clyde Space, both proposing systems of antennas. Our choice is towards
+                        a solution similar to the ISIS dipole antenna because characteristics match with system and environmental
+                        specifications: </p>
+                    <ul>
+                        <li>
+                            <p>low gain: 0bB in UHF </p>
+                        </li>
+                        <li>
+                            <p>
+                                <2W </p>
+                        </li>
+                        <li>
+                            <p>1200 - 9600 bauds -
+                                <100g </p>
+                        </li>
+                        <li>
+                            <p>almost omnidirectional </p>
+                        </li>
+                        <li>
+                            <p>Dipole length: λ/2 </p>
+                        </li>
+                    </ul>
+                    <p><a href="/wiki/pdf/Mecanical_components_TCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Mecanical components TCS</a></p>
+                    <h4>Orbit and data estimation</h4>
+                    <p>The orbit period of the ECE3SAT is between 90 and 105 min. It’s about 15 revolutions around Earth per
+                        day. We have only 3 orbits of 7 to 13 minutes per day that we can truly be exploited. That is aproximatly
+                        30 minutes of visibility per day. </p>
+                    <div class="v1-col v1-image v1-center v1-padding-large">
+                        <img src="/wiki/images/Size_of-data-TCS.jpg" width="500" height="350" onclick="onClick(this)" class=" v1-image v1-hover-opacity"
+                            alt="Size of data TCS">
+                        <figcaption>Size of data TCS</figcaption>
+                    </div>
+                    <p>Note : The period of sampling is arbitrarily fixed here. </p>
+                    <p>For the moment the total amount we have to transmit per orbit is 207663 bits or about 208 kbit.</p>
+                    <p>We must also assure that we can stock the equivalent of 8 orbits of data in the memory of the satellite:
+                        we are not able to transmit data each orbit of our satellite and sometimes, you can have 8 successive
+                        orbits without visibility as we can see in Gpredict for similar projects.</p>
+                    <p><a href="/wiki/pdf/Orbit-and_data_estimation_TCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Orbit and data estimation TCS</a></p>
+                    <h4>Thermal simulation TCS</h4>
+                    <p>We can identify four sources of heat:</p>
+                    <ul>
+                        <li>
+                            <p><b>Equipment</b>: The components within the satellite produce heat with the energy they consume.</p>
+                        </li>
+                        <li>
+                            <p><b>Solar radiation</b>: This is the most important source of heat. The solar flux accounts between
+                                1353 and 1375 Watts / m².</p>
+                        </li>
+                        <li>
+                            <p><b>Albedo</b>: This refers to the solar radiation reflected by the Earth. This energy represents
+                                an average radiance of 196 W / m² in the sunny hemisphere of the Earth.</p>
+                        </li>
+                        <li>
+                            <p><b>Earth radiation</b>: This accounts an energy of 190W / m² up to 240W / m².</p>
+                        </li>
+                    </ul>
+                    <p>The data coming from the FUNcube-1 also gave us the temperature range in which a satellite operates :
+                        from -30 ° C to 85 ° C</p>
+                    <p><a href="/wiki/pdf/Thermal_Simulation_TCS.pdf"><i class="fa fa-file-archive-o fa-fw v1-hover-text-black v1-xlarge v1-margin-right"></i>Thermal Simulation TCS</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div w3-include-html="/wiki/footerWiki.html"></div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="v1-modal v1-black" onclick="this.style.display='none'">
+        <span class="v1-button v1-large v1-black v1-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="v1-modal-content v1-animate-zoom v1-center v1-transparent v1-padding-64">
+            <img id="img01" class="v1-image">
+            <p id="caption" class="v1-opacity v1-large"></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
