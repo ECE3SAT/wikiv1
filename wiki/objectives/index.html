@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>ECE3SAT</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/ECE3SAT/css/v1.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/ECE3SAT/css/style.css"/>
+		<link rel="stylesheet" href="/ECE3SAT/css/navWiki.css"/>
+		<script src="/ECE3SAT/js/imageScript.js"></script>
+		<script src="/ECE3SAT/js/wikiMenuScript.js"></script>
+		<title>ECE3SAT's Website</title>
+</head>
+<body>
+	
+<?php 
+ $path = $_SERVER['DOCUMENT_ROOT'];
+ $path .= "/ECE3SAT/wiki/headerWiki.php";
+   include_once($path);
+?>
+
+<div id="home">
+	<div class="v1-content v1-container v1-padding-64" id="globalContext">
+		<h3 class="v1-center">2017-2018 Objectives</h3>
+		<br><br>
+		<div class="v1-row">
+			<div class="v1-col v1-padding-large">
+				<h4>ADCS</h4>
+				<p>This year corresponds the B phase of the Attitude Determination and Control System (ADCS) of the ECE3SAT. Our work will be centralized on 4 fields.</p>
+				<p>First of all, we want our satellite to be as open source as possible, that's why we are going to develop our visibility and to document all our work through the year. That means we are going to be much more present on social media, post videos, communicate…</p>
+				<p>Secondly, we need to electronically simulate our environment. To do so we will implement our model of the ECE3SAT in a physical engine made on the computer.</p>
+				<p>Thirdly, we need a reliable control algorithm which will take the decisions based on the data filtered from sensors. It means we are going to design and implement our ADCS algorithms so that it is reusable both for the simulation and physical experiments (and hopefully usable on the final ECE3SAT with the least effort possible).</p>
+				<p>Finally, we will build an experimental setup to emulate our own test environment with a controllable magnetic field (via Helmholtz coils).</p>
+				<h4>EPS</h4>
+				<p>During this year, we will first start by ending phase A. Then, we will handle phase B. You will find below this year’s main objectives. </p>
+				<ul>
+					<li>Ending phase A :
+						<ul>
+      						<li>Test the battery charging time with solar panels using a battery loaded at 20% which is the minimum value required.</li>
+							<li>Change/add components :
+								<ul>
+									<li>Add switches to the model with ISIS and test it.</li>
+									<li>Look for an alternative to MPPT.</li>
+								</ul>
+							</li>
+							<li>Find out how to provide energy alternatively with solar panels and battery.
+								<ul>
+									<li>Consider battery as primary source of energy, then check again battery charging time.</li>
+								</ul>
+							<li>PV cells’ efficiency under sunlight :
+								<ul>
+									<li>Improve current delivered by MPPT in order to charge the battery while current is used by all components.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li>Phase B :
+						<ul>
+							<li>Design EPS module :
+		       	 				<ul>
+									<li>Choice of each component.</li>
+									<li>Test all components together.</li>
+                                </ul>
+       						</li>
+      						<li>Pooling of the entire CubeSat.</li>
+							<li>Platform test :
+	  							<ul>
+									<li>Rotation’s tests at different speeds</li>
+									<li>Analyze those tests :
+     									<ul>
+											<li>Correlation position/variables(orientation, luminosity, temperature, magnetism)</li>
+											<li>Energy harvested (while position static at different angles, and rotation at different speed).</li>
+ 				      					</ul>
+									</li>
+  								</ul>
+       						</li>
+						</ul>
+					</li>
+				</ul>
+				<h4>OBC</h4>
+				<p>This year is OBC's second phase out of 4. This year's goal is to determine the global architecture of the ECE3Sat and to write the specification of the OBC.</p>
+				<p>In order to fulfill this objective, we will have several tasks.</p>
+				<p>First, we will study the already launched cubesats and the various architectures (centralized vs distributed). This will allow us to choose the most suited for our mission.</p>
+				<p>We will write the specifications of the OBC hardware and software to allow next year's team to implement it.</p>
+				<p>We will write the specifications of the communication protocol (which messages, which frequency, which criticality, ...).</p>
+				<p>Finally, we will study the means of simulation to assess the quality of the implementation.</p>
+				<h4>TCS</h4>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<?php 
+ $path = $_SERVER['DOCUMENT_ROOT'];
+ $path .= "/ECE3SAT/wiki/footerWiki.php";
+   include_once($path);
+?>
+
+</body>
+</html>
